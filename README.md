@@ -34,3 +34,7 @@ Use the following instructions below if you need to build these images. Please r
 ```bash
 docker build -t dva-ui ./Dockerfile
 ```
+
+### Environment Setup
+
+In order for the Docker-Compose to work, you will need to create some local directories. Please execute the `setup.sh` file to create the docker-compose directories required for the app to work.

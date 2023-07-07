@@ -1,0 +1,32 @@
+version: "3"
+services:
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=sqlpass
+      - MYSQL_DATABASE=dva
+      - MYSQL_USER=dva
+      - MYSQL_PASSWORD=sqlpass
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+  frontend:
+    image: dva-ui:latest
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - ./frontend-data:/app
+    ports:
+      - 3000:3000
+  api:
+    image: dva-api:latest
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - ./api-data:/app
+    ports:
+      - 8000:8000
