@@ -1,3 +1,5 @@
 mysql-data
 frontend-data
+mysql-config
 api-data
+.DS_Store
